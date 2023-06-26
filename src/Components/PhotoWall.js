@@ -1,13 +1,18 @@
 import React from "react";
 import Photo from "./Photo"
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 
+//anchor tag, href attribute
 function PhotoWall(props) {
-    return <div className="photo-grid">
-            {props.posts.map((post, index) => <Photo 
-                key={index} 
-                post={post}
-                onRemovePhoto={props.onRemovePhoto}/>)}
+    return <div>
+            <Link className="add-icon" to="/AddPhoto"></Link>
+            <div className="photo-grid">
+                {props.posts.map((post, index) => <Photo 
+                    key={index} 
+                    post={post}
+                    onRemovePhoto={props.onRemovePhoto}/>)}
+            </div>
         </div>
 }
 

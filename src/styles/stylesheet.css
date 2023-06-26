@@ -56,3 +56,12 @@ h1 {
     line-height: 2;
     padding: 5;
 }
+
+.add-icon {
+    margin: 20px auto;
+    display: table;
+    padding: 40px;
+    background: url("https://www.svgrepo.com/show/68819/plus.svg");
+    background-size: contain;
+    border: none;
+}

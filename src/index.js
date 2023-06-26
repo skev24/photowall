@@ -2,6 +2,8 @@ import React from "react";
 import { render } from "react-dom";
 import Main from "./Components/Main";
 import "./styles/stylesheet.css"
+import { BrowserRouter } from "react-router-dom";
+
 //const tasks = ["Take the trash out", 'Shovel the driveway', 'Walk the dog']
 
 // const element = React.createElement('h1', null, 'Hello World!');
@@ -46,4 +48,4 @@ import "./styles/stylesheet.css"
     
 //   }
 // }
-render(<Main/>, document.getElementById('root'));
+render(<BrowserRouter><Main/></BrowserRouter>, document.getElementById('root'));
