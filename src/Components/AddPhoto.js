@@ -17,14 +17,14 @@ export default class AddPhoto extends Component {
             imageLink: imageLink
         }
         if(description && imageLink){
-            this.props.onAddPhoto(post);
+            this.props.addPost(post)
+            this.props.onHistory.push('/');
         }
     }
 
     render() {
         return (
             <div>
-                <h1> This is the page where we will add photos</h1>
                 <div className="form">
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" placeholder="Link" name="link"/>
