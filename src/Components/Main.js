@@ -1,11 +1,11 @@
-import React, {Component} from "react";
-import Title from "./Title";
+import React, { Component } from "react";
 import PhotoWall from "./PhotoWall";
 import AddPhoto from "./AddPhoto";
 import { Link, Route } from "react-router-dom";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+import Single from './Single'
 
-class Main extends Component {
+export default class Main extends Component {
 
     constructor() {
         super();
@@ -23,18 +23,13 @@ class Main extends Component {
                     </div>
                 )}/>
                 <Route path="/AddPhoto" render = {({history}) => (
-                    <AddPhoto {...this.props}/>  
+                    <AddPhoto {...this.props} onHistory={history}/>  
                 )}/>       
-                        
+
+                <Route path="/single/:id" render={(params) => (
+                    <Single {...this.props} {...params}/> 
+                )}/>    
              </div>
         )
     }
 }
-
-function mapStateToProps(state) {
-    return {
-        posts: state
-    }
-}
-  
-export default connect(mapStateToProps)(Main);
